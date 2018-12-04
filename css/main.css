@@ -1,0 +1,13 @@
+body{
+
+}
+
+canvas{
+    width: 100%;
+    max-width: 500px;
+    display: block !important;
+    margin: 0 auto;
+
+}
+
+
