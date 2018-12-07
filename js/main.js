@@ -19,6 +19,7 @@ function inicializarCanvas(){
 function dibujar(ctx){
     for (var i = 0; i < 4; i++) {
         for (var j = 0; j < 4; j++) {
+            
             ctx.fillStyle = 'hsl(' + 360 * Math.random() + ', 50%, 50%)';
             ctx.beginPath();
             ctx.arc(X+ j*(X*2), Y + i *(Y*1.5), X/1.5, 0, Math.PI * 2, true);
