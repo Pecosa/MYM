@@ -2,12 +2,25 @@ body{
 
 }
 
-canvas{
-    width: 100%;
-    max-width: 500px;
-    display: block !important;
-    margin: 0 auto;
 
+.container{
+    margin: 0 auto;
+}
+.circle{
+    width: 70px;
+    height: 70px;
+    border-radius: 200px;
 }
 
 
+.pad-10{
+    padding: 10px;
+}
+
+.circle-bg{
+    background: red;
+}
+/*
+.border-6{
+    border-radius: 6px solid;
+} */

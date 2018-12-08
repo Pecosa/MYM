@@ -1,28 +1,77 @@
-var canvas = document.getElementById("plano");
-var X,Y;
+let colores = ["#8230DF", "#B4EC51", "#F5515F" , "#FAD961",
+               "#7CB3FC", "#AF65BD", "#E74454", "#4D35A9",
+               "#DA505F", "#9B57CA", "#5DA82C", "#B6192E",
+               "#7CB3FC", "#AF65BD",  "#E74454", "#4D35A9"];
 
-inicializarCanvas();
+let colorBorder=["#d2f497", "#b483ec", "#f9979f", "#fce8a0",
+    "#d2f497", "#b483ec", "#f9979f", "#fce8a0",
+    "#d2f497", "#b483ec", "#f9979f", "#fce8a0",
+    "#d2f497", "#b483ec", "#f9979f", "#fce8a0"];
 
-function inicializarCanvas(){
-    var ctx = canvas.getContext("2d");
-    var s = getComputedStyle(canvas);
-    var w = s.width;
-    var h = s.height;
-    var padding= (canvas.width/16);
-    canvas.width=w.split("px")[0];
-    canvas.height=h.split("px")[0];
-    X=canvas.width/8;
-    Y=canvas.height/8;
-    dibujar(ctx);
+
+
+for (let i = 1; i < 17; i++) {
+    let circulo = document.getElementById('circle-'+i);
+    circulo.style.background = colores[i-1];
 }
 
-function dibujar(ctx){
-    for (var i = 0; i < 4; i++) {
-        for (var j = 0; j < 4; j++) {
-            ctx.fillStyle = 'hsl(' + 360 * Math.random() + ', 50%, 50%)';
-            ctx.beginPath();
-            ctx.arc(X+ j*(X*2), Y + i *(Y*1.5), X/1.5, 0, Math.PI * 2, true);
-            ctx.fill();
-        }
-    }
+var maquina = [];
+
+
+for(let i=0; i<24; i++) {
+    maquina.push( Math.floor(Math.random() * (16 - 1)) + 1);
 }
+
+let running = true;
+let nivelActual = 1;
+
+function secuenciaNivel(secuencia, nivel) {
+    return secuencia.slice(0,nivel+1);
+}
+
+while (running === true) {
+    let camino = secuenciaNivel(maquina, nivelActual);
+
+
+     if (gotCorrectSequence(camino)) {
+         nivelActual = nivelActual + 1;
+     }
+    else {
+         running = false;
+     }
+    //Pinta secuencia nivel n
+    //Checa si usuario responde bien
+    //Si usuario responde mal, running = false
+    //Si usuario responde bien, nivel = n + 1
+}
+
+function gotCorrectSequence(seq) {
+    var usuario = [];
+    //Pintar los colores en la secuencia correcta
+    seq.forEach(id => {
+        let circulo = document.getElementById('circle-'+id);
+        //Set timeout
+        let color = colorBorder[id-1];
+        circulo.style.border = "6px solid "+ color;
+        //Despintar la border
+});
+    //Escuchar al usuario
+    //Llenar usuario con los movimientos del usuario
+
+    //Secuencia contiene lo mismo que usuario?????
+    //Si las secuencias contienen lo mismo, return true
+    //Si las secuencias contienen cosas diferentes, return false
+    //Si se acaba el tiempo, return false
+}
+
+//Llena array de longitud 25
+//Con nùmeros aleatorios del 1 al 16
+//
+
+//interaccion
+//let color = colorBorder[i-1];
+//circulo.style.border = "6px solid "+ color;
+
+//var x = document.getElementById("circle-1");
+
+//x.style.background = "#8230DF";
