@@ -32,6 +32,11 @@ body{
     color: white;
     height: 70px;
 }
+
+.icon{
+    font-size: 2em;
+    color: #333333;
+}
 /*
 .border-6{
     border-radius: 6px solid;
