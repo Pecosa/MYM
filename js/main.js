@@ -1,77 +1,99 @@
-let colores = ["#8230DF", "#B4EC51", "#F5515F" , "#FAD961",
-               "#7CB3FC", "#AF65BD", "#E74454", "#4D35A9",
-               "#DA505F", "#9B57CA", "#5DA82C", "#B6192E",
-               "#7CB3FC", "#AF65BD",  "#E74454", "#4D35A9"];
 
-let colorBorder=["#d2f497", "#b483ec", "#f9979f", "#fce8a0",
-    "#d2f497", "#b483ec", "#f9979f", "#fce8a0",
-    "#d2f497", "#b483ec", "#f9979f", "#fce8a0",
-    "#d2f497", "#b483ec", "#f9979f", "#fce8a0"];
+$("#sonido").click(function() {
+    $(this).find('img').toggle();
+});
+$("#play").click(function() {
+    $(this).find('img').toggle();
+});
+
+$("#recarga").click(function() {
+    $(this).find('img').toggle();
+});
 
 
+let colores =
+    ["#8230df", "#b4ec51", "#f5515f" , "#3023ae",
+    "#fad961", "#7cb3fc", "#af65bd", "#b6406a",
+    "#e74454", "#4d35a9", "#da505f", "#aa5fcf",
+    "#9b57ca", "#5da82c",  "#b6192e", "#63ade0",
+    "#fad961", "#7cb3fc",  "#af65bd", "#b6406a"];
 
-for (let i = 1; i < 17; i++) {
+let colorBorder=
+    ["#b483ec", "#d2f497", "#f9979f", "#837bce",
+    "#fce8a0", "#b0d1fd", "#cfa3d7", "#d38ca6",
+    "#f18f98", "#9486cb", "#e9969f", "#cc9fe2",
+    "#c39adf", "#9ecb80", "#d37582", "#a1ceec",
+    "#fce8a0", "#b0d1fd", "#cfa3d7", "#d38ca6"];
+
+
+// imprime colores
+for (let i = 1; i < 21; i++) {
     let circulo = document.getElementById('circle-'+i);
     circulo.style.background = colores[i-1];
 }
 
 var maquina = [];
+var usuario = [];
+var nivel = 10;
 
 
-for(let i=0; i<24; i++) {
-    maquina.push( Math.floor(Math.random() * (16 - 1)) + 1);
+for(let i=0; i<21; i++) {
+    maquina.push( Math.floor(Math.random() * (20 - 1)) + 1);
+
 }
 
-let running = true;
-let nivelActual = 1;
-
-function secuenciaNivel(secuencia, nivel) {
-    return secuencia.slice(0,nivel+1);
+function updateGame(){
+    gotSequence(nivel)
 }
 
-while (running === true) {
-    let camino = secuenciaNivel(maquina, nivelActual);
-
-
-     if (gotCorrectSequence(camino)) {
-         nivelActual = nivelActual + 1;
-     }
-    else {
-         running = false;
-     }
-    //Pinta secuencia nivel n
-    //Checa si usuario responde bien
-    //Si usuario responde mal, running = false
-    //Si usuario responde bien, nivel = n + 1
-}
-
-function gotCorrectSequence(seq) {
+function gotSequence(nivel) {
     var usuario = [];
     //Pintar los colores en la secuencia correcta
-    seq.forEach(id => {
-        let circulo = document.getElementById('circle-'+id);
-        //Set timeout
-        let color = colorBorder[id-1];
-        circulo.style.border = "6px solid "+ color;
-        //Despintar la border
-});
-    //Escuchar al usuario
-    //Llenar usuario con los movimientos del usuario
+    for(var i = 1; i <= nivel; i++) {
+        let idCirculo = Math.floor(Math.random() * (20 - 1)) + 1;
 
-    //Secuencia contiene lo mismo que usuario?????
-    //Si las secuencias contienen lo mismo, return true
-    //Si las secuencias contienen cosas diferentes, return false
-    //Si se acaba el tiempo, return false
+
+
+        window.setInterval(drawSequence(idCirculo), (i * 10000)/nivel)
+
+    }
 }
 
-//Llena array de longitud 25
-//Con nùmeros aleatorios del 1 al 16
-//
 
-//interaccion
-//let color = colorBorder[i-1];
-//circulo.style.border = "6px solid "+ color;
 
-//var x = document.getElementById("circle-1");
 
-//x.style.background = "#8230DF";
+function drawSequence(idCirculo) {
+    let circulo = document.getElementById('circle-'+idCirculo)
+    //Set timeout
+    let color = colorBorder[idCirculo-1];
+
+    circulo.style.border = "6px solid "+ color;
+    //agregamos el id a la maquina
+    maquina.push(idCirculo);
+    //Despintar la border
+}
+
+window.onload = function() {
+    updateGame();
+
+
+
+}
+
+function valida(circulo) {
+    var arrayC = circulo.id.split("-");
+
+    usuario.push(arrayC[1]);
+
+    for(var i=0; i< usuario.length; i++){
+        if(usuario[i]!=maquina)
+            false
+        console.log("hola---")
+    }
+
+    if (usuario.length=== maquina.length) {
+        console.log("hola ganaste");
+    }else{
+        console.log("perdiste");
+    }
+}

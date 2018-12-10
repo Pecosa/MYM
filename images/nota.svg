@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="29px" viewBox="0 0 20 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>nota</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="interfaz-copy" transform="translate(-31.000000, -737.000000)" stroke="#000000">
+            <g id="nota" transform="translate(30.000000, 738.000000)">
+                <g id="Group-5" transform="translate(2.000000, 0.000000)">
+                    <path d="M10.2325581,22.1967442 C10.2325581,24.4906977 7.94139535,26.372093 5.11627907,26.372093 C2.29116279,26.372093 0,24.4906977 0,22.1967442 C0,19.8809302 2.29116279,18 5.11627907,18 C7.94139535,18 10.2325581,19.8809302 10.2325581,22.1967442 Z" id="Stroke-1" stroke-width="2"></path>
+                    <polyline id="Stroke-3" stroke-width="2" points="10.6184638 21 10.6184638 4.65116279e-05 17.5748372 8.11572295"></polyline>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
