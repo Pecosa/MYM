@@ -14,114 +14,28 @@
 
 </head>
 <body>
+<canvas id="circle-random"></canvas>
 <div class="bg-img"><img class="img-responsive" src="images/bg.svg"> </div>
-<div class="poins">
-    <div class="container">
-    <div class="row">
-        <div class="col text-center">Nivel</div>
-        <div class="col text-center">Tiempo</div>
-    </div>
-    </div>
-</div>
 <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-8 ">
+            <img class="logotipo" src="images/logotipo.svg">
+        </div>
+    </div>
 
-
-    <div class="row">
-        <div class="col pad-10">
-            <div id="circle-1" class="circle border-6" onclick="valida(this)"></div>
-        </div>
-        <div class="col pad-10">
-            <div id="circle-2" class="circle border-6"></div>
-        </div>
-        <div class="col pad-10">
-            <div id="circle-3" class="circle border-6"></div>
-        </div>
-        <div class="col pad-10">
-            <div id="circle-4" class="circle border-6"></div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col pad-10">
-            <div id="circle-5" class="circle border-6"></div>
-        </div>
-        <div class="col pad-10">
-            <div id="circle-6" class="circle border-6"></div>
-        </div>
-        <div class="col pad-10">
-            <div id="circle-7" class="circle border-6"></div>
-        </div>
-        <div class="col pad-10">
-            <div id="circle-8" class="circle border-6"></div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col pad-10">
-            <div id="circle-9" class="circle border-6"></div>
-        </div>
-        <div class="col pad-10">
-            <div id="circle-10" class="circle border-6"></div>
-        </div>
-        <div class="col pad-10">
-            <div id="circle-11" class="circle border-6"></div>
-        </div>
-        <div class="col pad-10">
-            <div id="circle-12" class="circle border-6"></div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col pad-10">
-            <div id="circle-13" class="circle border-6" onclick="valida(this)"></div>
-        </div>
-        <div class="col pad-10">
-            <div id="circle-14" class="circle border-6"></div>
-        </div>
-        <div class="col pad-10">
-            <div id="circle-15" class="circle border-6"></div>
-        </div>
-        <div class="col pad-10">
-            <div id="circle-16" class="circle border-6"></div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col pad-10">
-            <div id="circle-17" class="circle border-6"></div>
-        </div>
-        <div class="col pad-10">
-            <div id="circle-18" class="circle border-6"></div>
-        </div>
-        <div class="col pad-10">
-            <div id="circle-19" class="circle border-6"></div>
-        </div>
-        <div class="col pad-10">
-            <div id="circle-20" class="circle border-6"></div>
-        </div>
-    </div>
 </div>
 
+<div class="btn-start fixed-bottom container">
+    <button type="button" class="btn btn-dark btn-lg btn-block ">Juego Nuevo</button>
+    <button type="button" class="btn btn-dark btn-lg btn-block ">Cargar Partida</button>
+    <button type="button" class="btn btn-default btn-circle btn-lg"><i class="fas fa-star"></i></button>
 
-    <div class="menu fixed-bottom">
-        <div class="container">
-            <div class="row tab">
-                <div id="sonido" class="col text-center">
-                    <img class="icon-tab" src="images/nota.svg">
-                    <img class="icon-tab"  src="images/play.svg" style="display:none"/>
-                </div>
-                <div id="play" class="col text-center">
-                    <img class="icon-tab" src="images/play.svg">
-                    <img class="icon-tab"  src="images/nota.svg" style="display:none"/>
-                </div>
-                <div id="recarga" class="col text-center">
-                    <img class="icon-tab" src="images/reload.svg">
-                    <img class="icon-tab"  src="images/play.svg" style="display:none"/>
-                </div>
-            </div>
-        </div>
 
 </div>
 <!-- jQuery first, then Tether, then Bootstrap JS. -->
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>

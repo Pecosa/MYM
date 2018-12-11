@@ -1,5 +1,5 @@
 body{
-
+overflow-y: hidden;
 }
 
 
@@ -76,8 +76,56 @@ canvas{
     position: absolute;
     z-index: -1;
 }
-img-
+.logotipo{
+    width: 100%;
+    height: auto;
+    padding-top: 55%;
+    padding-bottom: 35%;
+}
+
+.btn-dark{
+    background: black;
+    border-radius: 100px !important;
+    color: white !important;
+    margin-bottom: 5%;
+    cursor: pointer;
+}
+
+#circle-random {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+}
+
+.btn-circle.btn-lg {
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 50px;
+    background: #000 !important;
+    color: white;
+    -webkit-box-shadow: 0px 0px 22px 0px rgba(50, 50, 50, 0.64);
+    -moz-box-shadow:    0px 0px 22px 0px rgba(50, 50, 50, 0.64);
+    box-shadow:         0px 0px 22px 0px rgba(50, 50, 50, 0.64);
+    position: absolute;
+    right: 0px;
+    bottom: 20px;
+    right: 10px;
+}
+
+.btn-start{
+
+    padding-top: 20px;
+    height: 250px;
+}
 /*
 .border-6{
     border-radius: 6px solid;
 } */
+
+
+
