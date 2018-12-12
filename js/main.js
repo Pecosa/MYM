@@ -51,13 +51,9 @@ function updateGame() {
 }
 
 function gotSequence(nivel) {
-    var usuario = [];
-    var secuencia = [];
-    //Pintar los colores en la secuencia correcta
-    for(var i = 1; i <= nivel; i++) {
-        
-
-    }
+    usuario = [];
+    secuencias = [];
+    ClearElements();
 
     var contador = 1;
 
@@ -67,6 +63,7 @@ function gotSequence(nivel) {
         contador++;
         if(contador > nivel) {
             stop();
+
         }
     }, 1000);
 
@@ -92,6 +89,15 @@ function drawSequence(idCirculo) {
     //Despintar la border
 }
 
+function ClearElements() {
+    for (let i = 1; i < 21; i++) {
+        console.log();
+        let circulo = document.getElementById('circle-'+i);
+        circulo.style.border = "none" ;
+
+    }
+}
+
 window.onload = function() {
     updateGame();
 
@@ -112,10 +118,7 @@ function valida(circulo) {
 
     if (usuario.length === secuencias.length) {
         console.log("hola ganaste");
-        for (let i = 1; i < 21; i++) {
-    let circulo = document.getElementById('circle-'+i);
-    circulo.style.background = colores[i-1];
-}
+        secuencias = [];
         updateGame();
     }
 }
