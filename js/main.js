@@ -33,8 +33,11 @@ for (let i = 1; i < 21; i++) {
 }
 
 var maquina = [];
+var secuencias = [];
 var usuario = [];
-var nivel = 10;
+var nivel = 3;
+
+var intervalID = 0;
 
 
 for(let i=0; i<21; i++) {
@@ -42,21 +45,37 @@ for(let i=0; i<21; i++) {
 
 }
 
-function updateGame(){
+function updateGame() {
+
     gotSequence(nivel)
 }
 
 function gotSequence(nivel) {
     var usuario = [];
+    var secuencia = [];
     //Pintar los colores en la secuencia correcta
     for(var i = 1; i <= nivel; i++) {
-        let idCirculo = Math.floor(Math.random() * (20 - 1)) + 1;
-
-
-
-        window.setInterval(drawSequence(idCirculo), (i * 10000)/nivel)
+        
 
     }
+
+    var contador = 1;
+
+    intervalID = setInterval(() => {
+        let idCirculo = Math.floor(Math.random() * (20 - 1)) + 1;
+        drawSequence(idCirculo)
+        contador++;
+        if(contador > nivel) {
+            stop();
+        }
+    }, 1000);
+
+    
+}
+
+function stop() {
+    console.log(secuencias);
+    clearInterval(intervalID);
 }
 
 
@@ -69,7 +88,7 @@ function drawSequence(idCirculo) {
 
     circulo.style.border = "6px solid "+ color;
     //agregamos el id a la maquina
-    maquina.push(idCirculo);
+    secuencias.push(idCirculo);
     //Despintar la border
 }
 
@@ -84,16 +103,19 @@ function valida(circulo) {
     var arrayC = circulo.id.split("-");
 
     usuario.push(arrayC[1]);
-
+    
     for(var i=0; i< usuario.length; i++){
-        if(usuario[i]!=maquina)
-            false
-        console.log("hola---")
+        if(usuario[i]!=secuencias[i])
+            console.log("perdiste");
+            
     }
 
-    if (usuario.length=== maquina.length) {
+    if (usuario.length === secuencias.length) {
         console.log("hola ganaste");
-    }else{
-        console.log("perdiste");
+        for (let i = 1; i < 21; i++) {
+    let circulo = document.getElementById('circle-'+i);
+    circulo.style.background = colores[i-1];
+}
+        updateGame();
     }
 }
