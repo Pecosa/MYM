@@ -35,7 +35,7 @@ for (let i = 1; i < 21; i++) {
 var maquina = [];
 var secuencias = [];
 var usuario = [];
-var nivel = 3;
+var nivel = 2;
 
 var intervalID = 0;
 
@@ -119,6 +119,7 @@ function valida(circulo) {
     if (usuario.length === secuencias.length) {
         console.log("hola ganaste");
         secuencias = [];
+        nivel++;
         updateGame();
     }
 }
