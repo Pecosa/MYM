@@ -1,4 +1,15 @@
 
+var audio0 = document.createElement('audio');
+ audio0.setAttribute('src', 'https://s3.amazonaws.com/freecodecamp/simonSound1.mp3');
+var audio1 = document.createElement('audio');
+ audio1.setAttribute('src', 'https://s3.amazonaws.com/freecodecamp/simonSound2.mp3');
+var audio2 = document.createElement('audio');
+ audio2.setAttribute('src', 'https://s3.amazonaws.com/freecodecamp/simonSound3.mp3');
+var audio3 = document.createElement('audio');
+ audio3.setAttribute('src', 'https://s3.amazonaws.com/freecodecamp/simonSound4.mp3');
+
+
+
 $("#sonido").click(function() {
     $(this).find('img').toggle();
 });
@@ -9,6 +20,7 @@ $("#play").click(function() {
 $("#recarga").click(function() {
     $(this).find('img').toggle();
 });
+
 
 
 let colores =
@@ -25,12 +37,18 @@ let colorBorder=
     "#c39adf", "#9ecb80", "#d37582", "#a1ceec",
     "#fce8a0", "#b0d1fd", "#cfa3d7", "#d38ca6"];
 
+let sonido =
+[audio0, audio1, audio2, audio3
+];
+
 
 // imprime colores
 for (let i = 1; i < 21; i++) {
     let circulo = document.getElementById('circle-'+i);
     circulo.style.background = colores[i-1];
 }
+
+
 
 var maquina = [];
 var secuencias = [];
@@ -46,7 +64,7 @@ for(let i=0; i<21; i++) {
 }
 
 function updateGame() {
-
+    //audio0.play();
     gotSequence(nivel)
 }
 
@@ -58,8 +76,10 @@ function gotSequence(nivel) {
     var contador = 1;
 
     intervalID = setInterval(() => {
+        //aqui va el if
         let idCirculo = Math.floor(Math.random() * (20 - 1)) + 1;
-        drawSequence(idCirculo)
+        let idSonido = Math.floor(Math.random()*(4-1))+1;
+        drawSequence(idCirculo, idSonido)
         contador++;
         if(contador > nivel) {
             stop();
@@ -78,16 +98,22 @@ function stop() {
 
 
 
-function drawSequence(idCirculo) {
+function drawSequence(idCirculo, idSonido) {
+
+
+ 
     let circulo = document.getElementById('circle-'+idCirculo)
     //Set timeout
     let color = colorBorder[idCirculo-1];
 
-    circulo.style.border = "6px solid "+ color;
-    //agregamos el id a la maquina
     secuencias.push(idCirculo);
-    //Despintar la border
+
+    circulo.style.border = "6px solid "+ color;
+    sonido[idSonido].play();
+ 
+    //agregamos el id a la maquina
 }
+  
 
 function ClearElements() {
     for (let i = 1; i < 21; i++) {
@@ -98,10 +124,15 @@ function ClearElements() {
     }
 }
 
+
+
+
+
 window.onload = function() {
+    
+
+
     updateGame();
-
-
 
 }
 
