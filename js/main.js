@@ -76,10 +76,27 @@ function gotSequence(nivel) {
     var contador = 1;
 
     intervalID = setInterval(() => {
+
         //aqui va el if
         let idCirculo = Math.floor(Math.random() * (20 - 1)) + 1;
         let idSonido = Math.floor(Math.random()*(4-1))+1;
-        drawSequence(idCirculo, idSonido)
+        drawSequence(idCirculo, idSonido);
+         if(secuencias.length>1){
+            //[3,5]
+            let position = secuencias.length-2;
+            // position 0
+            let idCirculo2 = secuencias[position]
+            elementEraser(idCirculo2);
+
+        } 
+         while(secuencias.length===1){
+            //[3,5]
+            let position = secuencias.length-1;
+            // position 0
+            let idCirculo2 = secuencias[position]
+            elementEraserAlone(idCirculo2);
+
+        } 
         contador++;
         if(contador > nivel) {
             stop();
@@ -108,8 +125,9 @@ function drawSequence(idCirculo, idSonido) {
 
     secuencias.push(idCirculo);
 
-    circulo.style.border = "6px solid "+ color;
+    circulo.style.border = "10px solid "+ color;
     sonido[idSonido].play();
+
  
     //agregamos el id a la maquina
 }
@@ -124,9 +142,15 @@ function ClearElements() {
     }
 }
 
+function elementEraser(idCirculo){
+        let circulo = document.getElementById("circle-"+idCirculo);
+        circulo.style.border = "none" ;
+}
 
-
-
+function elementEraserAlone(idCirculo){
+        let circulo = document.getElementById("circle-"+idCirculo);
+        circulo.style.border = "none" ;
+}
 
 window.onload = function() {
     
