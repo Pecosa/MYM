@@ -169,6 +169,10 @@ function valida(circulo) {
         console.log("hola ganaste");
         secuencias = [];
         nivel++;
+        console.log(nivel);
+        document.getElementById("nivel-numero").innerHTML = nivel;
+
         updateGame();
+
     }
 }
