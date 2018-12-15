@@ -83,6 +83,13 @@ canvas{
     padding-bottom: 35%;
 }
 
+.logotipo-perdiste{
+    width: 100%;
+    height: auto;
+    padding-top: 55%;
+    padding-bottom: 15%;
+}
+
 .btn-dark{
     background: black;
     border-radius: 100px !important;
@@ -142,4 +149,76 @@ canvas{
 .nivel{
 
     color: #fff;
+}
+
+
+
+
+.pulse {
+    margin:100px;
+    display: block;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #cca92c;
+    cursor: pointer;
+    box-shadow: 0 0 0 rgba(204,169,44, 0.4);
+    animation: pulse 2s infinite;
+}
+.pulse:hover {
+    animation: none;
+}
+
+@-webkit-keyframes pulse {
+    0% {
+        -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+    }
+    70% {
+        -webkit-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+    }
+    100% {
+        -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+    }
+}
+@keyframes pulse {
+    0% {
+        -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+        box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+    }
+    70% {
+        -moz-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+        box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+    }
+    100% {
+        -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+        box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+    }
+}
+
+.level-count{
+}
+
+.logotipo-xs{
+    width: 100px;
+    height: auto;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.img-level{
+    width: 30px;
+    height: auto;
+    padding-top: 10px;
+}
+
+
+.text-perdiste{
+    color:#FF505F;
+}
+
+#nivel-numero{
+    font-size: 1.5em;
+    line-height: 40px;
+    /* padding-top: 55px; */
+    margin-top: 10px;
 }
