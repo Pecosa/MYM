@@ -89,14 +89,7 @@ function gotSequence(nivel) {
             elementEraser(idCirculo2);
 
         } 
-         while(secuencias.length===1){
-            //[3,5]
-            let position = secuencias.length-1;
-            // position 0
-            let idCirculo2 = secuencias[position]
-            elementEraserAlone(idCirculo2);
-
-        } 
+         
         contador++;
         if(contador > nivel) {
             stop();
@@ -167,8 +160,9 @@ function valida(circulo) {
     
     for(var i=0; i< usuario.length; i++){
         if(usuario[i]!=secuencias[i])
-            console.log("perdiste");
-            
+
+            document.getElementById('perdiste').style.display = 'block';
+
     }
 
     if (usuario.length === secuencias.length) {
